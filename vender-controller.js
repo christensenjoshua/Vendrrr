@@ -22,7 +22,7 @@ function VenderController() {
       template += `
       <div class="col-4">
         <h5>${currItem.name}</h5>
-        <img src="${currItem.image}" style="height:200px">
+        <img src="${currItem.image}" style="height:175px">
         <p>${currItem.description}</p>
         <p>Price: ${currItem.price}</p>
         <p>In Stock: ${currItem.amount}</p>
@@ -42,12 +42,12 @@ function VenderController() {
     let template = `
     <div class="col-4 machinebox">
     <h5>${currItem.name}</h5>
-    <img src="${currItem.image}" style="height:200px">
+    <img src="${currItem.image}" style="height:175px">
     <p>${currItem.description}</p>
     </div>
     `
     document.getElementById('output').innerHTML += template
-    document.getElementById('thankyou').innerHTML = '<button class="btn btn-primary" onclick="app.controllers.venderController.thankYou()">Thank You</button>'
+    document.getElementById('thankyou').innerHTML = '<button class="btn btn-primary btn-lg" onclick="app.controllers.venderController.thankYou()">Thank You</button>'
   }
 
   //public parts
@@ -56,6 +56,10 @@ function VenderController() {
   //we need a function to take money from our "view" and pass it to our service
   this.addMoney = function(){
     venderService.addMoney()
+    drawMoney()
+  }
+  this.returnChange = function(){
+    venderService.returnChange()
     drawMoney()
   }
   this.purchaseItem = function(itemNum){

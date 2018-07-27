@@ -48,6 +48,9 @@ function VenderService(){
   this.addMoney = function(){
     money += .25
   }
+  this.returnChange = function(){
+    money = 0
+  }
   this.getMoney = function(){
     return money
   }

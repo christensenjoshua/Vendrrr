@@ -23,7 +23,8 @@
         <h5 id="money">Money: $
           <span id="moneyAmt">0</span>
         </h5>
-        <button onclick="app.controllers.venderController.addMoney()">Add Quarter</button>
+        <button class="btn btn-primary btn-lg" onclick="app.controllers.venderController.addMoney()">Add Quarter</button>
+        <button class="btn btn-primary btn-lg" onclick="app.controllers.venderController.returnChange()">Return Change</button>
       </div>
     </div>
     <div class="row text-center">
@@ -31,7 +32,7 @@
         <h3>Output:</h3>
       </div>
     </div>
-    <div class="row" id="output">
+    <div class="row text-center" id="output">
     </div>
     <div class="row text-center">
       <div class="col-12" id="thankyou">
