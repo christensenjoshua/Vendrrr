@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Vendrrr</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row text-center machinebox">
+      <div class="col-12">
+        <h1>Vendrrr!</h1>
+        <h3>Items:</h3>
+        <div id="items" class="row">
+
+        </div>
+        <h5 id="money">Money: $
+          <span id="moneyAmt">0</span>
+        </h5>
+        <button onclick="app.controllers.venderController.addMoney()">Add Quarter</button>
+      </div>
+    </div>
+    <div class="row text-center">
+    <div class="col-12">
+      <h3>Output:</h3>
+      <div id="output">
+          
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="vender-service.js"></script>
+  <script src="vender-controller.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
