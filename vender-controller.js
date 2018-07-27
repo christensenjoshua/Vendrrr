@@ -20,7 +20,7 @@ function VenderController() {
         btnDesc = 'Purchase'
       }
       template += `
-      <div class="col-4">
+      <div class="col-sm-12 col-md-6 col-lg-4">
         <h5>${currItem.name}</h5>
         <img src="${currItem.image}" style="height:175px">
         <p>${currItem.description}</p>
@@ -40,7 +40,7 @@ function VenderController() {
     let items = venderService.getItems()
     let currItem = items[itemNum]
     let template = `
-    <div class="col-4 machinebox">
+    <div class="col-sm-12 col-md-6 col-lg-4 machinebox">
     <h5>${currItem.name}</h5>
     <img src="${currItem.image}" style="height:175px">
     <p>${currItem.description}</p>
