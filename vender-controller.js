@@ -22,6 +22,7 @@ function VenderController() {
       template += `
       <div class="col-4">
         <h5>${currItem.name}</h5>
+        <img src="${currItem.image}" style="height:200px">
         <p>${currItem.description}</p>
         <p>Price: ${currItem.price}</p>
         <p>In Stock: ${currItem.amount}</p>
@@ -41,6 +42,7 @@ function VenderController() {
     let template = `
     <div class="col-4 machinebox">
     <h5>${currItem.name}</h5>
+    <img src="${currItem.image}" style="height:200px">
     <p>${currItem.description}</p>
     </div>
     `
