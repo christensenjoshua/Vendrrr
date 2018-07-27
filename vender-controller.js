@@ -10,7 +10,9 @@ function VenderController() {
     let template = ''
     for(let i = 0; i < items.length; i++){
       let currItem = items[i]
-      let btnOnClick = ""
+      let btnOnClick = ''
+      let btnClass = ''
+      let btnDesc = ''
       if(currItem.amount < 1){
         btnClass = 'btn btn-secondary'
         btnDesc = 'Out of Stock'

@@ -1,3 +1,4 @@
 .machinebox {
-    border:5px inset black;
+    border:5px inset purple;
+    background:linear-gradient(to bottom, #8d6a88, #ffffff)
 }
