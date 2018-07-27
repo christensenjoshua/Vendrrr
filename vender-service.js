@@ -55,16 +55,18 @@ function VenderService(){
     let currItem = items[itemNum]
     if(currItem.amount < 1){
       alert('Stop It')
-      return
+      return false
     }
     if(currItem.price <= money){
       money -= currItem.price
       currItem.amount -= 1
       //vend the item
       alert('You bought it!')
+      return true
     }else{
       //could not purchase item
       alert('Not enough money!')
+      return false
     }
   }
 

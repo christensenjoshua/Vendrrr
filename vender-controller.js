@@ -35,6 +35,18 @@ function VenderController() {
     let currMoney = venderService.getMoney()
     document.getElementById('moneyAmt').innerText = currMoney
   }
+  function drawOutput(itemNum){
+    let items = venderService.getItems()
+    let currItem = items[itemNum]
+    let template = `
+    <div class="col-4 machinebox">
+    <h5>${currItem.name}</h5>
+    <p>${currItem.description}</p>
+    </div>
+    `
+    document.getElementById('output').innerHTML += template
+    document.getElementById('thankyou').innerHTML = '<button class="btn btn-primary" onclick="app.controllers.venderController.thankYou()">Thank You</button>'
+  }
 
   //public parts
 
@@ -45,9 +57,16 @@ function VenderController() {
     drawMoney()
   }
   this.purchaseItem = function(itemNum){
-    venderService.purchaseItem(itemNum)
+    let itemSucceed = venderService.purchaseItem(itemNum)
     drawItems()
     drawMoney()
+    if(itemSucceed){
+      drawOutput(itemNum)
+    }
+  }
+  this.thankYou = function(){
+    document.getElementById('output').innerHTML = ''
+    document.getElementById('thankyou').innerHTML = ''
   }
 
 }
