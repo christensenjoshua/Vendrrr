@@ -1,10 +1,10 @@
 function VenderController() {
   //private parts
   let venderService = new VenderService()
-  drawItems()
+  drawItems(venderService.getItems())
+  drawMoney()
   //items is an array we need to get from the service and give to drawItems
-  function drawItems() {
-    let items = venderService.getItems()
+  function drawItems(items) {
     //we will take in a paramter(items) and iterate over it to build
     //a template to draw to the screen.
     let template = ''
@@ -13,9 +13,11 @@ function VenderController() {
       let btnOnClick = ''
       let btnClass = ''
       let btnDesc = ''
+      let btnDisabled = ''
       if(currItem.amount < 1){
         btnClass = 'btn btn-secondary'
         btnDesc = 'Out of Stock'
+        btnDisabled = 'disabled'
       }else{
         btnClass = 'btn btn-primary'
         btnOnClick = "app.controllers.venderController.purchaseItem('"+i+"')"
@@ -23,12 +25,12 @@ function VenderController() {
       }
       template += `
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <h5>${currItem.name}</h5>
-        <img src="${currItem.image}" style="height:175px">
-        <p>${currItem.description}</p>
-        <p>Price: ${currItem.price}</p>
-        <p>In Stock: ${currItem.amount}</p>
-        <button class="${btnClass}" onclick="${btnOnClick}">${btnDesc}</button>
+      <h5>${currItem.name}</h5>
+      <img src="${currItem.image}" style="height:175px">
+      <p>${currItem.description}</p>
+      <p>Price: ${currItem.price}</p>
+      <p>In Stock: ${currItem.amount}</p>
+      <button ${btnDisabled} class="${btnClass}" onclick="${btnOnClick}">${btnDesc}</button>
       </div>
       `
     }
@@ -51,10 +53,10 @@ function VenderController() {
     document.getElementById('output').innerHTML += template
     document.getElementById('thankyou').innerHTML = '<button class="btn btn-primary btn-lg" onclick="app.controllers.venderController.thankYou()">Thank You</button>'
   }
-
+  
   //public parts
-
-
+  
+  
   //we need a function to take money from our "view" and pass it to our service
   this.addMoney = function(){
     venderService.addMoney()
@@ -66,7 +68,7 @@ function VenderController() {
   }
   this.purchaseItem = function(itemNum){
     let itemSucceed = venderService.purchaseItem(itemNum)
-    drawItems()
+    drawItems(venderService.getItems())
     drawMoney()
     if(itemSucceed){
       drawOutput(itemNum)
@@ -76,5 +78,5 @@ function VenderController() {
     document.getElementById('output').innerHTML = ''
     document.getElementById('thankyou').innerHTML = ''
   }
-
+  
 }
