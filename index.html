@@ -34,28 +34,28 @@
     </div>
     <form onsubmit="app.controllers.venderController.createItem(event)">
       <div class="form-row align-items-center">
-        <div class="col">
-          <label class="sr-only" for="snackname">Name</label>
-          <input type="text" class="form-control" name="snackname" placeholder="Name" required>
+        <div class="form-group col col-auto">
+          <label class="" for="snackname">Name</label>
+          <input type="text" class="form-control" name="snackname" placeholder="Cool Snack" required>
         </div>
-        <div class="col-3">
-          <label class="sr-only" for="snackdescription">Description</label>
-          <input type="text" class="form-control" name="snackdescription" placeholder="Description" required>
+        <div class="form-group col col-auto">
+          <label class="" for="snackdescription">Description</label>
+          <input type="text" class="form-control" name="snackdescription" placeholder="A delicious snack..." required>
         </div>
-        <div class="col">
-          <label class="sr-only" for="snackprice">Price</label>
-          <input type="number" class="form-control" name="snackprice" placeholder="Price" required>
+        <div class="form-group col col-auto">
+          <label class="" for="snackprice">Price</label>
+          <input type="number" class="form-control" name="snackprice" placeholder="2.00" required>
         </div>
-        <div class="col">
-          <label class="sr-only" for="snackamount">Amount</label>
-          <input type="number" class="form-control" name="snackamount" placeholder="Amount" required>
+        <div class="form-group col col-auto">
+          <label class="" for="snackamount">Amount</label>
+          <input type="number" class="form-control" name="snackamount" placeholder="20" required>
         </div>
-        <div class="col-3">
-            <label class="sr-only" for="snackimage">Image URL</label>
+        <div class="form-group col col-auto">
+            <label class="" for="snackimage">Image URL</label>
             <input type="text" class="form-control" name="snackimage" placeholder="https://example.com/image.jpg" required>
           </div>
-        <div class="col">
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group col col-auto">
+          <button name="submit" type="submit" class="btn btn-primary form-control">Submit<br />New Snack</button>
         </div>
       </div>
     </form>
