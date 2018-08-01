@@ -76,6 +76,16 @@ function VenderService(){
       return false
     }
   }
+  this.createItem = function(data){
+    let newItem = {
+      name: data.snackname.value,
+      description: data.snackdescription.value,
+      price: data.snackprice.value,
+      amount: data.snackamount.value,
+      image: data.snackimage.value
+    }
+    items.push(newItem)
+  }
 
 
 

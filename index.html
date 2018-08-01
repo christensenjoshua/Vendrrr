@@ -29,16 +29,49 @@
     </div>
     <div class="row text-center">
       <div class="col-12">
-        <h3>Output:</h3>
+        <h3>Add a New Snack:</h3>
       </div>
     </div>
-    <div class="row text-center" id="output">
+    <form onsubmit="app.controllers.venderController.createItem(event)">
+      <div class="form-row align-items-center">
+        <div class="col">
+          <label class="sr-only" for="snackname">Name</label>
+          <input type="text" class="form-control" name="snackname" placeholder="Name" required>
+        </div>
+        <div class="col-3">
+          <label class="sr-only" for="snackdescription">Description</label>
+          <input type="text" class="form-control" name="snackdescription" placeholder="Description" required>
+        </div>
+        <div class="col">
+          <label class="sr-only" for="snackprice">Price</label>
+          <input type="number" class="form-control" name="snackprice" placeholder="Price" required>
+        </div>
+        <div class="col">
+          <label class="sr-only" for="snackamount">Amount</label>
+          <input type="number" class="form-control" name="snackamount" placeholder="Amount" required>
+        </div>
+        <div class="col-3">
+            <label class="sr-only" for="snackimage">Image URL</label>
+            <input type="text" class="form-control" name="snackimage" placeholder="https://example.com/image.jpg" required>
+          </div>
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row text-center">
+    <div class="col-12">
+      <h3>Output:</h3>
     </div>
-    <div class="row text-center">
-      <div class="col-12" id="thankyou">
+  </div>
+  <div class="row text-center" id="output">
+  </div>
+  <div class="row text-center">
+    <div class="col-12" id="thankyou">
 
-      </div>
     </div>
+  </div>
   </div>
   </div>
   </div>

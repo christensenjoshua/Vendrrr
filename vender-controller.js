@@ -78,5 +78,12 @@ function VenderController() {
     document.getElementById('output').innerHTML = ''
     document.getElementById('thankyou').innerHTML = ''
   }
+  this.createItem = function (e) {
+    e.preventDefault()
+    let formData = e.target
+    venderService.createItem(formData)
+    formData.reset()
+    drawItems(venderService.getItems())
+  }
   
 }
